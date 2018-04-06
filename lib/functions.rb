@@ -1,9 +1,7 @@
-def five(f = nil)
-  Proc === f ? f[5] : 5
-end
-
-def six(f = nil)
-  Proc === f ? f[6] : 6
+%w(zero one two three four five six seven eight nine).each_with_index do |name, index|
+  define_method name do |f = nil|
+    Proc === f ? f[index] : index
+  end
 end
 
 def times(r)
