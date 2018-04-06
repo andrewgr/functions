@@ -9,7 +9,9 @@ end
 end
 
 {
-  times: :*,
+  plus:       :+,
+  minus:      :-,
+  times:      :*,
   divided_by: :/,
 }.each do |operation, symbol|
   define_method operation do |r|
