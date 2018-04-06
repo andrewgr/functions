@@ -11,3 +11,7 @@ end
 def times(r)
   -> (l) { l * r }
 end
+
+def divided_by(r)
+  -> (l) { l / r }
+end

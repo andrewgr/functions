@@ -15,3 +15,9 @@ RSpec.describe do
     expect(six(times(five))).to eq(five(times(six)))
   end
 end
+
+RSpec.describe "divided_by" do
+  specify do
+    expect(six(divided_by(5))).to eq(1)
+  end
+end
