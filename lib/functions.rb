@@ -8,10 +8,11 @@ end
   end
 end
 
-def times(r)
-  -> (l) { l * r }
-end
-
-def divided_by(r)
-  -> (l) { l / r }
+{
+  times: :*,
+  divided_by: :/,
+}.each do |operation, symbol|
+  define_method operation do |r|
+    -> (l) { l.__send__(symbol, r) }
+  end
 end
