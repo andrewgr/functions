@@ -1,5 +1,5 @@
-def five
-  5
+def five(f = nil)
+  Proc === f ? f[5] : 5
 end
 
 def six(f = nil)
