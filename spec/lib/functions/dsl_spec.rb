@@ -47,7 +47,7 @@ RSpec.describe Functions::DSL do
   describe ".operation" do
     it "creates a method in the global scope" do
       expect {
-        described_class.operation(:foo) { |a, b| a + b }
+        described_class.binary_operation(:foo) { |a, b| a + b }
       }.to change {
         Object.__send__(:foo, 1) rescue nil
       }.from(nil)
@@ -56,7 +56,7 @@ RSpec.describe Functions::DSL do
     end
 
     describe "generated method" do
-      before { described_class.operation(:foo_bar) { |a, b| a / b } }
+      before { described_class.binary_operation(:foo_bar) { |a, b| a / b } }
 
       after { Object.remove_method(:foo_bar) }
 
