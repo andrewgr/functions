@@ -26,11 +26,11 @@ RSpec.describe Functions::DSL do
 
       after { Object.remove_method(:foo_bar) }
 
-      context "when passed nothing" do
+      context "when no args are passed" do
         it { expect(foo_bar).to eq(10) }
       end
 
-      context "when passed a proc" do
+      context "when a proc is passed" do
         let(:proc) { Proc.new { |x| x * 2 } }
 
         it "calls the proc and return its result" do
