@@ -29,7 +29,9 @@ RSpec.describe Functions::DSL do
       after { Object.remove_method(:foo_bar) }
 
       context "when no args are passed" do
-        it { expect(foo_bar).to eq(10) }
+        it "returns the value passed to the number function" do
+          expect(foo_bar).to eq(10)
+        end
       end
 
       context "when a proc is passed" do
