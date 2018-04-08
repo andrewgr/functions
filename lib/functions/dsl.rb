@@ -4,10 +4,10 @@ module Functions
   class << self
     attr_accessor :global_scope
 
-    def operand(name, value)
+    def number(name, value)
       global_scope.instance_exec do
-        define_method name do |f = Identity|
-          f[value]
+        define_method name do |operation = Identity|
+          operation.call(value)
         end
         private name
       end
@@ -16,7 +16,7 @@ module Functions
     def operation(name, &block)
       global_scope.instance_exec do
         define_method name do |b|
-          -> a { block.yield(a, b) }
+          -> a { block.call(a, b) }
         end
         private name
       end
