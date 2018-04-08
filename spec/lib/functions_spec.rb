@@ -138,4 +138,24 @@ RSpec.describe "operations" do
       expect(six(minus(three))).to eq(6 - 3)
     end
   end
+
+  describe ".to_the_power_of" do
+    it "raises a number to a power" do
+      expect(two(to_the_power_of(three))).to eq(2 ** 3)
+    end
+
+    it "handles a zero exponent" do
+      expect(two(to_the_power_of(zero))).to eq(1)
+    end
+
+    it "handles the base equal to one" do
+      expect(one(to_the_power_of(five))).to eq(1)
+    end
+  end
+
+  describe "when deeply nested" do
+    it "they still work" do
+      expect(one(plus(two(times(three))))).to eq(seven)
+    end
+  end
 end

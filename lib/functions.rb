@@ -12,7 +12,8 @@ Functions::DSL.number(:seven, 7)
 Functions::DSL.number(:eight, 8)
 Functions::DSL.number(:nine,  9)
 
-Functions::DSL.operation(:plus)       { |a, b| a + b }
-Functions::DSL.operation(:minus)      { |a, b| a - b }
-Functions::DSL.operation(:times)      { |a, b| a * b }
-Functions::DSL.operation(:divided_by) { |a, b| a / b }
+Functions::DSL.operation(:plus)            { |a, b| a + b }
+Functions::DSL.operation(:minus)           { |a, b| a - b }
+Functions::DSL.operation(:times)           { |a, b| a * b }
+Functions::DSL.operation(:divided_by)      { |a, b| a / b }
+Functions::DSL.operation(:to_the_power_of) { |a, b| a ** b }
