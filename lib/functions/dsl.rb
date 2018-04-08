@@ -1,11 +1,27 @@
-def operand(name, value)
-  define_method name do |f = -> (value) { value }|
-    f[value]
+module Functions
+  Identity = -> (x) { x }
+
+  class << self
+    attr_accessor :global_scope
+
+    def operand(name, value)
+      global_scope.instance_exec do
+        define_method name do |f = Identity|
+          f[value]
+        end
+        private name
+      end
+    end
+
+    def operation(name, &block)
+      global_scope.instance_exec do
+        define_method name do |b|
+          -> a { block.yield(a, b) }
+        end
+        private name
+      end
+    end
   end
 end
 
-def operation(name, &block)
-  define_method name do |b|
-    -> a { block.yield(a, b) }
-  end
-end
+Functions.global_scope = self
