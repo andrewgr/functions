@@ -2,102 +2,102 @@ RSpec.describe "numbers" do
   let(:proc) { ->(x) { x + 1 } }
 
   describe ".zero" do
-    context "with no args" do
-      specify { expect(zero).to eq(0) }
+    it "returns 0 when no args provided" do
+      expect(zero).to eq(0)
     end
 
-    context "with an operator proc" do
-      specify { expect(zero(proc)).to eq(1) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(zero(proc)).to eq(1)
     end
   end
 
   describe ".one" do
-    context "with no args" do
-      specify { expect(one).to eq(1) }
+    it "returns 1 when no args provided" do
+      expect(one).to eq(1)
     end
 
-    context "with an operator proc" do
-      specify { expect(one(proc)).to eq(2) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(one(proc)).to eq(2)
     end
   end
 
   describe ".two" do
-    context "with no args" do
-      specify { expect(two).to eq(2) }
+    it "returns 2 when no args provided" do
+      expect(two).to eq(2)
     end
 
-    context "with an operator proc" do
-      specify { expect(two(proc)).to eq(3) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(two(proc)).to eq(3)
     end
   end
 
   describe ".three" do
-    context "with no args" do
-      specify { expect(three).to eq(3) }
+    it "returns 3 when no args provided" do
+      expect(three).to eq(3)
     end
 
-    context "with an operator proc" do
-      specify { expect(three(proc)).to eq(4) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(three(proc)).to eq(4)
     end
   end
 
   describe ".four" do
-    context "with no args" do
-      specify { expect(four).to eq(4) }
+    it "returns 4 when no args provided" do
+      expect(four).to eq(4)
     end
 
-    context "with an operator proc" do
-      specify { expect(four(proc)).to eq(5) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(four(proc)).to eq(5)
     end
   end
 
   describe ".five" do
-    context "with no args" do
-      specify { expect(five).to eq(5) }
+    it "returns 5 when no args provided" do
+      expect(five).to eq(5)
     end
 
-    context "with an operator proc" do
-      specify { expect(five(proc)).to eq(6) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(five(proc)).to eq(6)
     end
   end
 
   describe ".six" do
-    context "with no args" do
-      specify { expect(six).to eq(6) }
+    it "returns 6 when no args provided" do
+      expect(six).to eq(6)
     end
 
-    context "with an operator proc" do
-      specify { expect(six(proc)).to eq(7) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(six(proc)).to eq(7)
     end
   end
 
   describe ".seven" do
-    context "with no args" do
-      specify { expect(seven).to eq(7) }
+    it "returns 7 when no args provided" do
+      expect(seven).to eq(7)
     end
 
-    context "with an operator proc" do
-      specify { expect(seven(proc)).to eq(8) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(seven(proc)).to eq(8)
     end
   end
 
   describe ".eight" do
-    context "with no args" do
-      specify { expect(eight).to eq(8) }
+    it "returns 8 when no args provided" do
+      expect(eight).to eq(8)
     end
 
-    context "with an operator proc" do
-      specify { expect(eight(proc)).to eq(9) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(eight(proc)).to eq(9)
     end
   end
 
   describe ".nine" do
-    context "with no args" do
-      specify { expect(nine).to eq(9) }
+    it "returns 9 when no args provided" do
+      expect(nine).to eq(9)
     end
 
-    context "with an operator proc" do
-      specify { expect(nine(proc)).to eq(10) }
+    it "returns a modified value when an operator arg is provided" do
+      expect(nine(proc)).to eq(10)
     end
   end
 end
