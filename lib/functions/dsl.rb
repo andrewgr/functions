@@ -16,8 +16,8 @@ module Functions
 
       def operation(name, &block)
         global_scope.instance_exec do
-          define_method name do |b|
-            -> a { block.call(a, b) }
+          define_method name do |y|
+            -> x { block.call(x, y) }
           end
           private name
         end
